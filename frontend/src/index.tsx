@@ -1,14 +1,9 @@
 import ReactDOM from 'react-dom';
-import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import React from 'react';
-import { productsReducer } from './slices';
 
+import { store } from './store';
 import App from './App';
-
-const store = configureStore({
-  reducer: { products: productsReducer },
-});
 
 ReactDOM.render(
   <React.StrictMode>

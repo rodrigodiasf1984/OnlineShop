@@ -1,1 +1,1 @@
-export { default as productsReducer } from './productsSlice';
+export { default as productsReducer } from './products/products.slice';
