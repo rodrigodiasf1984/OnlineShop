@@ -1,14 +1,17 @@
 import styled from 'styled-components';
+import { converterToRem } from '../../utils/converterToRem';
 
 export const Main = styled.main`
   background: var(--gray-600);
   text-align: center;
   display: flex;
   flex-direction: column;
+  padding-top: ${converterToRem(20)}rem;
 
   @media (min-width: 809px) {
     position: absolute;
     bottom: 0;
+    padding: 0;
     width: 100%;
     margin: auto auto;
     flex-direction: row;
