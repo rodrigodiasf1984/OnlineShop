@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 const app = express();
 import { products } from './products';
+import './database/connection';
 
 app.use(express.json());
 app.use(cors());
