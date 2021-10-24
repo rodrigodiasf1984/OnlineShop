@@ -36,6 +36,17 @@ export default {
       image,
     };
 
+    const schema = Yup.object().shape({
+      name: Yup.string().required(),
+      description: Yup.string().required().max(300),
+      price: Yup.number().required(),
+      image: Yup.object().shape({
+        path: Yup.string().required(),
+      }),
+    });
+
+    await schema.validate(data, { abortEarly: false });
+
     const product = productRepository.create(data);
 
     await productRepository.save(product);
