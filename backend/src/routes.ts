@@ -1,18 +1,13 @@
 import { Router } from 'express';
-import productsController from './controllers/productsController';
-
-import products from './products';
+import multer from 'multer';
+import uploadConfig from './config/upload';
+import ProductsController from './controllers/productsController';
 
 const routes = Router();
+const upload = multer(uploadConfig);
 
-routes.get('/', (req, res) => {
-  res.send('Welcome to our online shop API...');
-});
-
-routes.get('/products', (req, res) => {
-  return res.json({ products });
-});
-
-routes.post('/products', productsController.create);
+routes.post('/product', upload.single('image'), ProductsController.create);
+routes.get('/products', ProductsController.index);
+routes.get('/product/:id', ProductsController.show);
 
 export default routes;
