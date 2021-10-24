@@ -10,7 +10,7 @@ export const Main = styled.main`
     position: absolute;
     bottom: 0;
     width: 100%;
-    margin: auto;
+    margin: auto auto;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
