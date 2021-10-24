@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
+import * as Yup from 'yup';
 import Product from '../models/Product';
 import productsView from '../view/products_view';
 
