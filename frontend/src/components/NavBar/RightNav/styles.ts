@@ -8,6 +8,14 @@ export const Ul = styled.ul<NavboxProps>`
 
   li {
     padding: 18px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   @media (max-width: 768px) {

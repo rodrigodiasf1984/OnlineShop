@@ -53,7 +53,6 @@ export const Product = styled.div`
     width: ${converterToRem(20)}rem;
     height: ${converterToRem(20)}rem;
     align-self: flex-end;
-    z-index: 99;
     margin-right: ${converterToRem(10)}rem;
     margin-top: ${converterToRem(10)}rem;
   }

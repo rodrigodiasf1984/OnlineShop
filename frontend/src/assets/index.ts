@@ -7,3 +7,4 @@ export { default as linkedin } from './linkedin-round.svg';
 export { default as profileGithub } from './profilegithub.jpg';
 export { default as developer } from './developer.svg';
 export { default as heart } from './heart.svg';
+export { default as settings } from './settings.svg';

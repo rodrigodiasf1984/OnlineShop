@@ -7,7 +7,6 @@ import { Container, Main, Product, ProductList } from './styles';
 const Home = () => {
   const { data, error, isLoading } = useGetAllProductsQuery();
   const [page, setPage] = useState(1);
-  console.log('data', data);
 
   return (
     <Main>
