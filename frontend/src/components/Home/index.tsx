@@ -1,13 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useState } from 'react';
 import { heart } from '../../assets';
-import { useGetAllProductsQuery } from '../../slices/productsApi';
+import { useGetAllProductsQuery } from '../../slices/products/productsApi';
 import { Container, Main, Product, ProductList } from './styles';
 
 const Home = () => {
   const { data, error, isLoading } = useGetAllProductsQuery();
   const [page, setPage] = useState(1);
-  console.log('error', error);
+  console.log('data', data);
 
   return (
     <Main>
@@ -26,7 +26,7 @@ const Home = () => {
               product && (
                 <Product>
                   <img className="favorite" src={heart} alt="favorite" />
-                  <img src={product.image} alt={product.name} />
+                  <img src={product.image.url} alt={product.name} />
                   <h4>{product.name}</h4>
                   <p>{product.desc}</p>
                   <span>€ {product.price}</span>
