@@ -14,13 +14,20 @@ const Home = () => {
       <Container>
         {isLoading && <p>Loading...</p>}
         {error && <p>An error occured {error}</p>}
-        {data?.length && <h3>{data.length} Items found</h3>}
-        <h1>
-          Search Results for <br /> "Iphone 13"
-        </h1>
+        {data && data?.length > 0 ? (
+          <h3>{data.length} Items found</h3>
+        ) : (
+          <h3> No products, try to add them in admin section</h3>
+        )}
+        {data && data?.length > 0 && (
+          <h1>
+            Search Results for <br /> "Iphone 13"
+          </h1>
+        )}
       </Container>
       <ProductList>
-        {data?.length &&
+        {data &&
+          data?.length > 0 &&
           data.map(
             product =>
               product && (

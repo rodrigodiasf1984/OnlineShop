@@ -38,7 +38,7 @@ export default {
     const product = productRepository.create(data);
 
     await productRepository.save(product);
-    // eslint-disable-next-line no-console
+
     return res.status(201).json(product);
   },
 };
