@@ -1,3 +1,5 @@
+/* eslint-disable class-methods-use-this */
+/* eslint-disable import/prefer-default-export */
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
 export class createProducts1635074662807 implements MigrationInterface {
@@ -29,8 +31,18 @@ export class createProducts1635074662807 implements MigrationInterface {
             precision: 2,
           },
           {
-            name: 'image',
-            type: 'varchar',
+            name: 'image_id',
+            type: 'integer',
+          },
+        ],
+        foreignKeys: [
+          {
+            name: 'ImageProduct',
+            columnNames: ['image_id'],
+            referencedTableName: 'images',
+            referencedColumnNames: ['id'],
+            onUpdate: 'CASCADE',
+            onDelete: 'CASCADE',
           },
         ],
       }),
