@@ -1,4 +1,4 @@
-const products = [
+export const products = [
   {
     id: 1,
     name: 'Iphone 13 pro max',
@@ -48,5 +48,3 @@ const products = [
       'https://res.cloudinary.com/da7uqniqz/image/upload/v1634994548/online-shop/iphone-13-mini_uklmiq.png',
   },
 ];
-
-module.exports = products;
