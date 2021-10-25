@@ -3,6 +3,8 @@
 import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { toast } from 'react-toastify';
+import { useHistory } from 'react-router-dom';
 import api from '../../services/api';
 import { Container } from './styles';
 
@@ -28,22 +30,18 @@ const Admin = () => {
   } = useForm<IFormInputs>({
     resolver: yupResolver(schema),
   });
-  const onSubmit = async (data: IFormInputs) => {
-    // console.log(data.image);
 
-    // const image = { path: data.image[0].name };
-    // const image = { path: data.image[0] };
+  const history = useHistory();
+
+  const onSubmit = async (data: IFormInputs) => {
     const formattedData = new FormData();
     formattedData.append('image', data.image[0]);
     formattedData.append('name', data.name);
     formattedData.append('description', data.description);
     formattedData.append('price', data.price.toString());
-
-    console.log(formattedData);
     await api.post('product', formattedData);
-
-    // eslint-disable-next-line no-alert
-    alert('product saved');
+    toast.success('Product saved');
+    history.push('/');
   };
 
   return (
