@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
 import * as Yup from 'yup';
@@ -28,6 +29,8 @@ export default {
     const productRepository = getRepository(Product);
     const requestImage = req.file;
     const image = { path: requestImage?.filename };
+
+    console.log('requestImage', req.file);
 
     const data = {
       name,
