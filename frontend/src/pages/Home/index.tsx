@@ -1,12 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useState } from 'react';
 import { heart } from '../../assets';
 import { useGetAllProductsQuery } from '../../slices/products/productsApi';
 import { Container, Main, Product, ProductList } from './styles';
 
 const Home = () => {
   const { data, error, isLoading } = useGetAllProductsQuery();
-  const [page, setPage] = useState(1);
 
   return (
     <Main>

@@ -3,13 +3,14 @@
 import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import api from '../../services/api';
 import { Container } from './styles';
 
 interface IFormInputs {
   name: string;
   description: string;
   price: number;
-  image: File;
+  image: File[];
 }
 
 const schema = Yup.object({
@@ -27,8 +28,22 @@ const Admin = () => {
   } = useForm<IFormInputs>({
     resolver: yupResolver(schema),
   });
-  const onSubmit = (data: IFormInputs) => {
-    console.log(data);
+  const onSubmit = async (data: IFormInputs) => {
+    // console.log(data.image);
+
+    // const image = { path: data.image[0].name };
+    // const image = { path: data.image[0] };
+    const formattedData = new FormData();
+    formattedData.append('image', data.image[0]);
+    formattedData.append('name', data.name);
+    formattedData.append('description', data.description);
+    formattedData.append('price', data.price.toString());
+
+    console.log(formattedData);
+    await api.post('product', formattedData);
+
+    // eslint-disable-next-line no-alert
+    alert('product saved');
   };
 
   return (
@@ -57,7 +72,7 @@ const Admin = () => {
           <div>
             <label>Image</label>
             <input type="file" {...register('image')} />
-            {errors.image && <p>{errors.image.message}</p>}
+            {errors.image && <p>{errors.image}</p>}
           </div>
           <button type="submit">Save</button>
         </form>
