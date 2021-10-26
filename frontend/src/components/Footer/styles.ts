@@ -9,14 +9,11 @@ export const Main = styled.main`
   padding-top: ${converterToRem(20)}rem;
 
   @media (min-width: 809px) {
-    position: absolute;
-    bottom: 0;
-    padding: 0;
-    width: 100%;
-    margin: auto auto;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    bottom: 0;
+    width: 100%;
   }
 `;
 

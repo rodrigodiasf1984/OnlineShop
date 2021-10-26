@@ -4,10 +4,14 @@ import { converterToRem } from '../../utils/converterToRem';
 export const Nav = styled.nav`
   width: 100%;
   height: ${converterToRem(55)}rem;
+  background: var(--shape);
   border-bottom: 2px solid var(--gray-200);
   padding: 0 ${converterToRem(20)}rem;
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
 
   .icons {
     padding: ${converterToRem(15)}rem;

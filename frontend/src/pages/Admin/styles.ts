@@ -4,7 +4,9 @@ import { converterToRem } from '../../utils/converterToRem';
 export const Container = styled.main`
   display: flex;
   flex-direction: column;
-  margin-bottom: ${converterToRem(100)}rem;
+  height: 100%;
+  width: 100%;
+  margin: ${converterToRem(100)}rem 0;
 
   @media (min-width: 768px) {
     padding-top: ${converterToRem(50)}rem;
@@ -14,7 +16,7 @@ export const Container = styled.main`
   }
 
   @media (min-width: 1280px) {
-    padding-top: 0;
+    padding-top: ${converterToRem(100)}rem;
     margin-bottom: ${converterToRem(100)}rem;
   }
 

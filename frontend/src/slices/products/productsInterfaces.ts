@@ -5,7 +5,7 @@ type Image = {
 export interface IProducts {
   id: number;
   name: string;
-  desc: string;
+  description: string;
   price: number;
   image: Image;
 }

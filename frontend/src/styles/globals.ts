@@ -44,9 +44,10 @@ html{
 }
 
 body{
-  height: 100vh;
+  min-height: 100vh;
   background: var(--background);
   -webkit-font-smoothing: antialiased;
+
 }
 
 body, input, textarea, button {

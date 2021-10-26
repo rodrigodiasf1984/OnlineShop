@@ -34,6 +34,7 @@ const Admin = () => {
   const history = useHistory();
 
   const onSubmit = async (data: IFormInputs) => {
+    console.log('dataForm', data);
     const formattedData = new FormData();
     formattedData.append('image', data.image[0]);
     formattedData.append('name', data.name);
