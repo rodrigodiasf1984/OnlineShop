@@ -7,7 +7,7 @@ export default {
       id: product.id,
       name: product.name,
       description: product.description,
-      price: product.description,
+      price: product.price,
       image: imagesView.render(product.image),
     };
   },
